@@ -1,0 +1,249 @@
+/* TodoApp.css */
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #f7f7f7;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .input-container {
+    display: flex;
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    flex-grow: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    user-select: none; 
+  }
+  
+  li button {
+    background-color: #ff3547;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  li button:hover {
+    background-color: #c62831;
+  }
+  
+  li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+
+  li:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+
+.priority-high {
+    background-color: #ff3547;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 8px;
+    margin-right: 8px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  /* TodoApp.css */
+/* ... (previous CSS rules) */
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Create a positioning context for absolute elements */
+    cursor: pointer; /* Add a pointer cursor for interaction */
+  }
+  
+  li.completed {
+    text-decoration: line-through; /* Line-through effect for completed tasks */
+    color: #888; /* Change the text color for completed tasks */
+  }
+  
+  span.completed-text {
+    color: #888; /* Change the text color for completed tasks */
+  }
+  
+  li .actions {
+    opacity: 0; /* Initially hide the actions */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    transition: opacity 0.3s;
+  }
+  
+  li:hover .actions {
+    opacity: 1; /* Show the actions when hovered over */
+  }
+  
+  li button {
+    background-color: #ff3547;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  li button:hover {
+    background-color: #c62831;
+  }
+  
+  
+  li.markable:hover {
+    background-color: #f2f2f2; /* Change background color when hovered */
+  }
+  
+  
+  span.markable-text {
+    transition: color 0.3s; /* Smooth color transition */
+  }
+  
+  /* For the delete button */
+  button.delete-button {
+    background-color: #ff3547;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  button.delete-button:hover {
+    background-color: #c62831;
+  }
+  
+  .task-text {
+    text-align: left;
+    flex-grow: 1;
+    padding-left: 10px; 
+  }
+  
+  .completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+  }
+
+
+.checkbox-container {
+    display: flex;
+    flex-shrink:0;
+    position: relative;
+    padding-left: 35px;
+    padding-bottom: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  /* Hide the default checkbox input */
+  .checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Style the custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Style the checked custom checkbox */
+  .checkbox-container input:checked + .checkmark:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 7px;
+    top: 7px;
+    width: 7px;
+    height: 7px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  /* Add styles for the custom checkbox when hovered */
+  .checkbox-container:hover input ~ .checkmark {
+    background-color: #f2f2f2;
+  }
+  
+  /* Add styles for the custom checkbox when checked and hovered */
+  .checkbox-container input:checked:hover ~ .checkmark {
+    background-color: #f2f2f2;
+  }
+  
+  /* ... (previous CSS rules) */
+  
